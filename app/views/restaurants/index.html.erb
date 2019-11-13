@@ -1,0 +1,23 @@
+<h1 class="m-3">All Restaurants</h1>
+
+<%= link_to "Add a new Restaurant", new_restaurant_path, class: "btn btn-info m-3"%>
+
+<div class="frow">
+  <% @restaurants.each do |r| %>
+    <div class="card m-3 d-flex inline" style="width: 18rem;">
+
+      <img src="http://loremflickr.com/300/300/<%= r.category%>%20food" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= r.name %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= r.category.capitalize %></h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+        <%= link_to "Learn More", restaurant_path(r), class: "btn btn-primary" %>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
+</div>
